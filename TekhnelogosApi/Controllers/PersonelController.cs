@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using ViewModel;
 
 namespace TekhnelogosApi.Controllers
 {
@@ -15,28 +16,57 @@ namespace TekhnelogosApi.Controllers
             _personelService = personelService;
         }
 
-        [HttpGet("getall")]
+        [HttpGet("GetAll")]
         public async Task<ActionResult<List<Personel>>> GetAll()
         {
-            var result = await _personelService.GetAllAsync();
-            return Ok(result);
+            var personels = await _personelService.GetAllAsync();
+            return Ok(personels);
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Personel>> GetById(int id)
+        [HttpGet("GetPersonelWithAllDetails")]
+        public async Task<IActionResult> GetPersonelWithAllDetailsAsync(int personelId)
         {
-            var result = await _personelService.GetByIdAsync(id);
-            if (result == null)
+            if (personelId <= 0)
+            {
+                return BadRequest("Invalid personel ID.");
+            }
+
+            var personelWithDetails = await _personelService.GetPersonelWithAllDetailsAsync(personelId);
+
+            if (personelWithDetails == null)
+            {
+                return NotFound("Department not found for the given personel ID.");
+            }
+
+            return Ok(personelWithDetails);
+        }
+
+        [HttpGet("ById/{id}")]
+        public async Task<ActionResult<Personel>> GetByIdAsync(int id)
+        {
+            var personel = await _personelService.GetByIdAsync(id);
+            if (personel == null)
             {
                 return NotFound();
             }
-            return Ok(result);
+            return Ok(personel);
+        }
+
+        [HttpGet("ByName/{name}")]
+        public async Task<ActionResult<Personel>> GetByNameAsync(string name)
+        {
+            var personel = await _personelService.GetByNameAsync(name);
+            if (personel == null)
+            {
+                return NotFound();
+            }
+            return Ok(personel);
         }
 
         [HttpPost("add")]
-        public async Task<IActionResult> Add(Personel personel)
+        public async Task<IActionResult> Add(PersonelViewModel viewmodel)
         {
-            await _personelService.AddAsync(personel);
+            await _personelService.AddAsync(viewmodel);
             return Ok();
         }
 
@@ -53,11 +83,12 @@ namespace TekhnelogosApi.Controllers
             return NoContent();
         }
 
-        [HttpPut]
-        public async Task<ActionResult> Update(Personel personel)
+        [HttpPut("update")]
+        public async Task<IActionResult> Update(PersonelViewModel viewModel)
         {
-            await _personelService.UpdateAsync(personel);
-            return NoContent();
+           
+            await _personelService.UpdateAsync(viewModel); 
+            return NoContent(); 
         }
 
     }

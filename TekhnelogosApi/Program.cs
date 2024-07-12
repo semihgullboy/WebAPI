@@ -1,5 +1,6 @@
 using Business.Abstract;
 using Business.Concrete;
+using Business.MappingProfiles;
 using DataAccess.Abstract;
 using DataAccess.Concrete;
 using DataAccess.Concrete.EntityFramework;
@@ -15,6 +16,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
@@ -27,6 +30,9 @@ builder.Services.AddDbContext<ApplicationContext>(options =>
 
 builder.Services.AddScoped<IPersonelDal, EFPersonelDal>();
 builder.Services.AddScoped<IPersonelService, PersonelManager>();
+
+builder.Services.AddScoped<IAssigmentDal, EfAssigmentDal>();
+builder.Services.AddScoped<IAssigmentService, AssigmentManager>();
 
 var app = builder.Build();
 

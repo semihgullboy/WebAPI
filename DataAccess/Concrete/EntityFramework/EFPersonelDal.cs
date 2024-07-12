@@ -7,41 +7,26 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EFPersonelDal : IPersonelDal
+    public class EFPersonelDal : EfEntityRepositoryBase<Personel, ApplicationContext>, IPersonelDal
     {
         private readonly ApplicationContext _context;
 
-        public EFPersonelDal(ApplicationContext context)
+        public EFPersonelDal(ApplicationContext context) : base(context)
         {
             _context = context;
         }
 
-        public async Task AddAsync(Personel entity)
+        public async Task<Personel> GetPersonelWithAllDetailsAsync(int personelId)
         {
-            await _context.Personels.AddAsync(entity);
-            await _context.SaveChangesAsync();
+            var personel = await _context.Personels
+                .Include(p => p.Department)
+                .Include(p => p.Title)
+                .Include(p => p.Assignments)
+                    .ThenInclude(a => a.Project)
+                .FirstOrDefaultAsync(p => p.PersonelID == personelId);
+
+            return personel;
         }
 
-        public async Task DeleteAsync(Personel entity)
-        {
-            _context.Personels.Remove(entity);
-            await _context.SaveChangesAsync();
-        }
-
-        public async Task<List<Personel>> GetAllAsync()
-        {
-            return await _context.Personels.ToListAsync();
-        }
-
-        public async Task<Personel> GetByIdAsync(int id)
-        {
-            return await _context.Personels.FindAsync(id);
-        }
-
-        public async Task UpdateAsync(Personel entity)
-        {
-            _context.Personels.Update(entity);
-            await _context.SaveChangesAsync();
-        }
     }
 }

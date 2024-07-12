@@ -150,3 +150,7 @@ C:\Users\semih\OneDrive\Masaüstü\WebApi\TekhnelogosApi\obj\Debug\net6.0\refint
 C:\Users\semih\OneDrive\Masaüstü\WebApi\TekhnelogosApi\obj\Debug\net6.0\TekhnelogosApi.pdb
 C:\Users\semih\OneDrive\Masaüstü\WebApi\TekhnelogosApi\obj\Debug\net6.0\TekhnelogosApi.genruntimeconfig.cache
 C:\Users\semih\OneDrive\Masaüstü\WebApi\TekhnelogosApi\obj\Debug\net6.0\ref\TekhnelogosApi.dll
+C:\Users\semih\OneDrive\Masaüstü\WebApi\TekhnelogosApi\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\semih\OneDrive\Masaüstü\WebApi\TekhnelogosApi\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\semih\OneDrive\Masaüstü\WebApi\TekhnelogosApi\bin\Debug\net6.0\ViewModel.dll
+C:\Users\semih\OneDrive\Masaüstü\WebApi\TekhnelogosApi\bin\Debug\net6.0\ViewModel.pdb

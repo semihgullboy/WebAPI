@@ -1,4 +1,5 @@
-﻿using Business.Abstract;
+﻿using AutoMapper;
+using Business.Abstract;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -6,21 +7,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ViewModel;
 
 namespace Business.Concrete
 {
     public class PersonelManager : IPersonelService
     {
         private readonly IPersonelDal _personelDal;
+        private readonly IMapper _mapper;
 
-        public PersonelManager(IPersonelDal personelDal)
+        public PersonelManager(IPersonelDal personelDal, IMapper mapper)
         {
             _personelDal = personelDal;
+            _mapper = mapper;
         }
 
-        public Task AddAsync(Personel entity)
+        public Task AddAsync(PersonelViewModel viewModel)
         {
-            return _personelDal.AddAsync(entity);
+            var personel = _mapper.Map<Personel>(viewModel);
+            return _personelDal.AddAsync(personel);
         }
 
         public Task DeleteAsync(Personel entity)
@@ -30,17 +35,29 @@ namespace Business.Concrete
 
         public Task<List<Personel>> GetAllAsync()
         {
-           return _personelDal.GetAllAsync();
+            return _personelDal.GetAllAsync();
         }
 
-        public Task<Personel> GetByIdAsync(int id)
+        public Task<Personel> GetByIdAsync(int personelId)
         {
-            return _personelDal.GetByIdAsync(id);
+            return _personelDal.GetAsync(p => p.PersonelID == personelId);
         }
 
-        public Task UpdateAsync(Personel entity)
+        public Task<Personel> GetByNameAsync(string personelName)
         {
-            return _personelDal.UpdateAsync(entity);
+            return _personelDal.GetAsync(p => p.FirstName == personelName);
         }
+
+        public Task<Personel> GetPersonelWithAllDetailsAsync(int personelId)
+        {
+            return _personelDal.GetPersonelWithAllDetailsAsync(personelId);
+        }
+
+        public Task UpdateAsync(PersonelViewModel viewModel)
+        {
+            var personel = _mapper.Map<Personel>(viewModel);
+            return _personelDal.UpdateAsync(personel);
+        }
+
     }
 }
