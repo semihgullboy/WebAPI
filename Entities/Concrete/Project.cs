@@ -1,6 +1,8 @@
-﻿namespace Entities.Concrete
+﻿using Core.Entities;
+
+namespace Entities.Concrete
 {
-    public class Project
+    public class Project: IEntity
     {
         public int ProjectID { get; set; }
         public string ProjectName { get; set; }

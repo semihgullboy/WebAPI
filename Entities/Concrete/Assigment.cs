@@ -1,6 +1,8 @@
-﻿namespace Entities.Concrete
+﻿using Core.Entities;
+
+namespace Entities.Concrete
 {
-    public class Assignment
+    public class Assignment : IEntity
     {
         public int AssignmentID { get; set; }
         public int ProjectID { get; set; }

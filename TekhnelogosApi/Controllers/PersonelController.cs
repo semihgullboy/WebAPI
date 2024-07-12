@@ -86,9 +86,9 @@ namespace TekhnelogosApi.Controllers
         [HttpPut("update")]
         public async Task<IActionResult> Update(PersonelViewModel viewModel)
         {
-           
-            await _personelService.UpdateAsync(viewModel); 
-            return NoContent(); 
+
+            await _personelService.UpdateAsync(viewModel);
+            return NoContent();
         }
 
     }
