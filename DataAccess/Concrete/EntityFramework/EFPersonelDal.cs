@@ -1,6 +1,7 @@
 ﻿using DataAccess.Abstract;
 using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
+using ViewModel;
 
 namespace DataAccess.Concrete.EntityFramework
 {
@@ -13,17 +14,25 @@ namespace DataAccess.Concrete.EntityFramework
             _context = context;
         }
 
-        public async Task<Personel> GetPersonelWithAllDetailsAsync(int personelId)
+        public async Task<PersonelDetailsViewModel> GetPersonelWithAllDetailsAsync(int personelId)
         {
             var personel = await _context.Personels
-                .Include(p => p.Department)
-                .Include(p => p.Title)
-                .Include(p => p.Assignments)
-                    .ThenInclude(a => a.Project)
-                .FirstOrDefaultAsync(p => p.PersonelID == personelId);
+                .Where(p => p.PersonelID == personelId)
+                .Select(p => new PersonelDetailsViewModel
+                {
+                    PersonelID = p.PersonelID,
+                    FirstName = p.FirstName,
+                    LastName = p.LastName,
+                    Gender = p.Gender,
+                    DepartmentName = p.Department.DepartmentName,
+                    TitleName = p.Title.TitleName,
+                    ProjectNames = p.Assignments.Select(a => a.Project.ProjectName).ToList()
+                })
+                .FirstOrDefaultAsync();
 
             return personel;
         }
+
 
     }
 }

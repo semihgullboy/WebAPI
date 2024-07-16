@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "nCLhiG5KqfQRaOQzDdf4SDVW4jLqqf9mKAO06gX1e8go9C9Q6m3C00bD91jPB0q0dNyN1vpjZNnMbR/JC941AQ==",
+  "dgSpecHash": "zPumsJ7zWZPyvtHp2xbSkP7Ow3aoxFburi13AghbMK3qGFP2/9wbOzQ7JWM8mQtQw5NUQ0UTvf/29sqJgVJ1Tg==",
   "success": true,
   "projectFilePath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\TekhnelogosApi\\TekhnelogosApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\semih\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\semih\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\semih\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
+    "C:\\Users\\semih\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\semih\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\semih\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\semih\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\semih\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.7\\microsoft.data.sqlclient.2.1.7.nupkg.sha512",

@@ -5,12 +5,12 @@ namespace Business.Abstract
 {
     public interface IPersonelService
     {
-        Task<Personel> GetByIdAsync(int personelId);
-        Task<Personel> GetByNameAsync(string personelName);
-        Task<List<Personel>> GetAllAsync();
+        Task<PersonelViewModel> GetByIdAsync(int personelId);
+        Task<PersonelViewModel> GetByNameAsync(string personelName);
+        Task<List<PersonelViewModel>> GetAllAsync();
         Task AddAsync(PersonelViewModel viewModel);
-        Task DeleteAsync(Personel entity);
+        Task DeleteAsync(int personelId);
         Task UpdateAsync(PersonelViewModel viewModel);
-        Task<Personel> GetPersonelWithAllDetailsAsync(int personelId);
+        Task<PersonelDetailsViewModel> GetPersonelWithAllDetailsAsync(int personelId);
     }
 }

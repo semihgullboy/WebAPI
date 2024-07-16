@@ -23,7 +23,7 @@ namespace TekhnelogosApi.Controllers
             return Ok(personels);
         }
 
-        [HttpGet("GetPersonelWithAllDetails")]
+        [HttpGet("GetPersonelWithAllDetails/{personelId}")]
         public async Task<IActionResult> GetPersonelWithAllDetailsAsync(int personelId)
         {
             if (personelId <= 0)
@@ -73,13 +73,7 @@ namespace TekhnelogosApi.Controllers
         [HttpDelete("delete{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            var personel = await _personelService.GetByIdAsync(id);
-            if (personel == null)
-            {
-                return NotFound();
-            }
-
-            await _personelService.DeleteAsync(personel);
+            await _personelService.DeleteAsync(id);
             return NoContent();
         }
 

@@ -9,6 +9,7 @@ namespace Business.MappingProfiles
         public AutoMapperProfile()
         {
             CreateMap<PersonelViewModel, Personel>();
+            CreateMap<Personel, PersonelViewModel>();
         }
     }
 }

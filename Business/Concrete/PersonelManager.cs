@@ -23,27 +23,34 @@ namespace Business.Concrete
             return _personelDal.AddAsync(personel);
         }
 
-        public Task DeleteAsync(Personel entity)
+        public async Task DeleteAsync(int personelId)
         {
-            return _personelDal.DeleteAsync(entity);
+            var personel = await  _personelDal.GetAsync(p => p.PersonelID == personelId);
+            if (personel != null)
+            {
+                await _personelDal.DeleteAsync(personel);
+            }
         }
 
-        public Task<List<Personel>> GetAllAsync()
+        public async Task<List<PersonelViewModel>> GetAllAsync()
         {
-            return _personelDal.GetAllAsync();
+            var personels = await _personelDal.GetAllAsync();
+            return _mapper.Map<List<PersonelViewModel>>(personels); 
         }
 
-        public Task<Personel> GetByIdAsync(int personelId)
+        public async Task<PersonelViewModel> GetByIdAsync(int personelId)
         {
-            return _personelDal.GetAsync(p => p.PersonelID == personelId);
+            var personel = await _personelDal.GetAsync(p => p.PersonelID == personelId);
+            return _mapper.Map<PersonelViewModel>(personel);
         }
 
-        public Task<Personel> GetByNameAsync(string personelName)
+        public async Task<PersonelViewModel> GetByNameAsync(string personelName)
         {
-            return _personelDal.GetAsync(p => p.FirstName == personelName);
+            var personel = await _personelDal.GetAsync(p => p.FirstName == personelName);
+            return _mapper.Map<PersonelViewModel>(personel);
         }
 
-        public Task<Personel> GetPersonelWithAllDetailsAsync(int personelId)
+        public Task<PersonelDetailsViewModel> GetPersonelWithAllDetailsAsync(int personelId)
         {
             return _personelDal.GetPersonelWithAllDetailsAsync(personelId);
         }
@@ -53,6 +60,7 @@ namespace Business.Concrete
             var personel = _mapper.Map<Personel>(viewModel);
             return _personelDal.UpdateAsync(personel);
         }
+
 
     }
 }

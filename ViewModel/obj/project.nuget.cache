@@ -1,9 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "jeCpOoKSSbDBvYJrao/ACDbHNyEYeyl96WeknbH42ZIVJHn4u0dCnLqyDy62kEIOCPQweuaBUmZ6wZxP2Rd6YQ==",
+  "dgSpecHash": "4XoUDU7DnMxIf5wIVbZSUmfZM3J7tbEBcq6pf+Iu6GuBmiYtm0L7sK32zKK4706VsNRO7rMev2r2+ePEp/XWeg==",
   "success": true,
   "projectFilePath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModel.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\semih\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
+    "C:\\Users\\semih\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\semih\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
+    "C:\\Users\\semih\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512",
     "C:\\Users\\semih\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.31\\microsoft.windowsdesktop.app.ref.6.0.31.nupkg.sha512",
     "C:\\Users\\semih\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.31\\microsoft.netcore.app.ref.6.0.31.nupkg.sha512",
     "C:\\Users\\semih\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.31\\microsoft.aspnetcore.app.ref.6.0.31.nupkg.sha512"

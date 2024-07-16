@@ -154,3 +154,6 @@ C:\Users\semih\OneDrive\Masaüstü\WebApi\TekhnelogosApi\bin\Debug\net6.0\AutoMa
 C:\Users\semih\OneDrive\Masaüstü\WebApi\TekhnelogosApi\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\semih\OneDrive\Masaüstü\WebApi\TekhnelogosApi\bin\Debug\net6.0\ViewModel.dll
 C:\Users\semih\OneDrive\Masaüstü\WebApi\TekhnelogosApi\bin\Debug\net6.0\ViewModel.pdb
+C:\Users\semih\OneDrive\Masaüstü\WebApi\TekhnelogosApi\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\semih\OneDrive\Masaüstü\WebApi\TekhnelogosApi\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\semih\OneDrive\Masaüstü\WebApi\TekhnelogosApi\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll

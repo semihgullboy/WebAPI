@@ -53,6 +53,10 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
             }
           },
           "imports": [
@@ -125,6 +129,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.32, )"
@@ -190,6 +198,9 @@
             "projectReferences": {
               "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\Entities\\Entities.csproj": {
                 "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\Entities\\Entities.csproj"
+              },
+              "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModel.csproj": {
+                "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModel.csproj"
               }
             }
           }
@@ -204,6 +215,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.32, )"
@@ -292,6 +307,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -355,6 +376,9 @@
               },
               "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\DataAccess\\DataAccess.csproj": {
                 "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\DataAccess\\DataAccess.csproj"
+              },
+              "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModel.csproj": {
+                "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModel.csproj"
               }
             }
           }
@@ -369,6 +393,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -466,6 +494,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
