@@ -22,13 +22,13 @@ namespace Business.Validators
                 .Must(dateOfBirth => DateTime.Now.Year - dateOfBirth.Year >= 18)
                 .WithMessage("Personel en az 18 yaşında olmalıdır.");
 
-            RuleFor(x => x.DepartmentID)
-                .NotEmpty().WithMessage("Boş girilmez.")
-                .GreaterThan(0).WithMessage("Geçersiz departman ID.");
+            //RuleFor(x => x.DepartmentID)
+            //    .NotEmpty().WithMessage("Boş girilmez.")
+            //    .GreaterThan(0).WithMessage("Geçersiz departman ID.");
 
-            RuleFor(x => x.TitleID)
-                .NotEmpty().WithMessage("Boş girilmez.")
-                .GreaterThan(0).WithMessage("Geçersiz title ID.");
+            //RuleFor(x => x.TitleID)
+            //    .NotEmpty().WithMessage("Boş girilmez.")
+            //    .GreaterThan(0).WithMessage("Geçersiz title ID.");
 
 
         }

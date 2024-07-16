@@ -7,6 +7,6 @@ namespace Entities.Concrete
         public int DepartmentID { get; set; }
         public string DepartmentName { get; set; }
 
-        public virtual ICollection<Personel> Personels { get; }
+        public virtual ICollection<Personel>? Personels { get; }
     }
 }

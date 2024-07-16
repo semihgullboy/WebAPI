@@ -34,6 +34,8 @@ builder.Services.AddDbContext<ApplicationContext>(options =>
 
 builder.Services.AddScoped<IPersonelDal, EFPersonelDal>();
 builder.Services.AddScoped<IPersonelService, PersonelManager>();
+builder.Services.AddScoped<IDepartmentDal, EfDepartmentDal>();
+builder.Services.AddScoped<IDepartmentService, DepartmentManager>();
 
 var app = builder.Build();
 
