@@ -35,6 +35,24 @@ namespace TekhnelogosApi.Controllers
             return Ok(title);
         }
 
+        [HttpGet("GetTitleWithPersonelsAsync")]
+        public async Task<IActionResult> GetTitleWithPersonelsAsync(int titleID)
+        {
+            if (titleID <= 0)
+            {
+                return BadRequest("Invalid department ID.");
+            }
+
+            var titleInformation = await _titleService.GetTitleWithPersonelsAsync(titleID);
+
+            if (titleInformation == null)
+            {
+                return NotFound("Department not found for the given personel ID.");
+            }
+
+            return Ok(titleInformation);
+        }
+
         [HttpPost("add")]
         public async Task<IActionResult> Add(TitleViewModel title)
         {
