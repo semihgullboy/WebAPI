@@ -47,7 +47,7 @@ namespace Business.Concrete
             return _mapper.Map<TitleViewModel>(title);
         }
 
-        public Task<Title> GetTitleWithPersonelsAsync(int titleId)
+        public Task<TitleDetailsViewModel> GetTitleWithPersonelsAsync(int titleId)
         {
             return _titleDal.GetTitleWithPersonelsAsync(titleId);
         }

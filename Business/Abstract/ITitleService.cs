@@ -15,6 +15,6 @@ namespace Business.Abstract
         Task<List<TitleViewModel>> GetAllAsync();
         Task<TitleViewModel> GetByIdAsync(int id);
         Task UpdateAsync(TitleViewModel entity);
-        Task<Title> GetTitleWithPersonelsAsync(int titleId);
+        Task<TitleDetailsViewModel> GetTitleWithPersonelsAsync(int titleId);
     }
 }

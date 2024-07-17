@@ -14,11 +14,28 @@ namespace DataAccess.Concrete.EntityFramework
             _context = context;
         }
 
-        public async Task<Title> GetTitleWithPersonelsAsync(int titleId)
+        public async Task<TitleDetailsViewModel> GetTitleWithPersonelsAsync(int titleId)
         {
-            return await _context.Titles
-                .Include(t => t.Personels)
-                .FirstOrDefaultAsync(t => t.TitleID == titleId);
+            var title = await _context.Titles
+                .Where(t => t.TitleID == titleId)
+                .Select(t => new TitleDetailsViewModel
+                {
+                    TitleID = t.TitleID,
+                    TitleName = t.TitleName,
+                    Personel = t.Personels.Select(p => new PersonelDetailsViewModel
+                    {
+                        PersonelID = p.PersonelID,
+                        FirstName = p.FirstName,
+                        LastName = p.LastName,
+                        Gender = p.Gender,
+                        DepartmentName = p.Department.DepartmentName,
+                        TitleName = p.Title.TitleName,
+                        ProjectNames = p.Assignments.Select(a => a.Project.ProjectName).ToList()
+                    }).ToList()
+                })
+                .FirstOrDefaultAsync();
+
+            return title;
         }
     }
 }
