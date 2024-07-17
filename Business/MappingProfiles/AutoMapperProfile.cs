@@ -14,6 +14,8 @@ namespace Business.MappingProfiles
             CreateMap<Department, DepartmentViewModel>();
             CreateMap<Title, TitleViewModel>();
             CreateMap<TitleViewModel, Title>();
+            CreateMap<Project, ProjectViewModel>();
+            CreateMap<ProjectViewModel, Project>();
         }
     }
 }

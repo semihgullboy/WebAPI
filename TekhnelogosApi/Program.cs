@@ -15,7 +15,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers()
         .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<PersonelViewModelValidator>())
-        .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<DepartmentViewModelValidator>());
+        .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<DepartmentViewModelValidator>())
+        .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<TitleViewModelValidator>());
+        //.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<ProjectViewModelValidator>());
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -39,8 +41,9 @@ builder.Services.AddScoped<IPersonelService, PersonelManager>();
 builder.Services.AddScoped<IDepartmentDal, EfDepartmentDal>();
 builder.Services.AddScoped<IDepartmentService, DepartmentManager>();
 builder.Services.AddScoped<ITitleDal, EfTitleDal>();
-builder.Services.AddScoped<IEntityRepository<Title>, EfTitleDal>(); 
 builder.Services.AddScoped<ITitleService, TitleManager>();
+builder.Services.AddScoped<IProjectDal, EfProjectDal>();
+builder.Services.AddScoped<IProjectService, ProjectManager>();
 
 
 var app = builder.Build();

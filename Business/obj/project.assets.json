@@ -839,7 +839,7 @@
           "FluentValidation.AspNetCore": "11.3.0",
           "Microsoft.EntityFrameworkCore": "6.0.32",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.32",
-          "ViewModel": "1.0.0"
+          "ViewModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/DataAccess.dll": {}
@@ -862,17 +862,17 @@
           "bin/placeholder/Entities.dll": {}
         }
       },
-      "ViewModel/1.0.0": {
+      "ViewModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "FluentValidation.AspNetCore": "11.3.0"
         },
         "compile": {
-          "bin/placeholder/ViewModel.dll": {}
+          "bin/placeholder/ViewModels.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ViewModel.dll": {}
+          "bin/placeholder/ViewModels.dll": {}
         }
       }
     }
@@ -2144,10 +2144,10 @@
       "path": "../Entities/Entities.csproj",
       "msbuildProject": "../Entities/Entities.csproj"
     },
-    "ViewModel/1.0.0": {
+    "ViewModels/1.0.0": {
       "type": "project",
-      "path": "../ViewModel/ViewModel.csproj",
-      "msbuildProject": "../ViewModel/ViewModel.csproj"
+      "path": "../ViewModel/ViewModels.csproj",
+      "msbuildProject": "../ViewModel/ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2156,7 +2156,7 @@
       "DataAccess >= 1.0.0",
       "Entities >= 1.0.0",
       "FluentValidation.AspNetCore >= 11.3.0",
-      "ViewModel >= 1.0.0"
+      "ViewModels >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2192,8 +2192,8 @@
             "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\Entities\\Entities.csproj": {
               "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\Entities\\Entities.csproj"
             },
-            "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModel.csproj": {
-              "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModel.csproj"
+            "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModels.csproj": {
+              "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModels.csproj"
             }
           }
         }

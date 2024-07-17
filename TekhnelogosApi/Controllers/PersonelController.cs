@@ -26,18 +26,7 @@ namespace TekhnelogosApi.Controllers
         [HttpGet("GetPersonelWithAllDetails/{personelId}")]
         public async Task<IActionResult> GetPersonelWithAllDetailsAsync(int personelId)
         {
-            if (personelId <= 0)
-            {
-                return BadRequest("Invalid personel ID.");
-            }
-
             var personelWithDetails = await _personelService.GetPersonelWithAllDetailsAsync(personelId);
-
-            if (personelWithDetails == null)
-            {
-                return NotFound("Department not found for the given personel ID.");
-            }
-
             return Ok(personelWithDetails);
         }
 
@@ -45,10 +34,6 @@ namespace TekhnelogosApi.Controllers
         public async Task<ActionResult<Personel>> GetByIdAsync(int id)
         {
             var personel = await _personelService.GetByIdAsync(id);
-            if (personel == null)
-            {
-                return NotFound();
-            }
             return Ok(personel);
         }
 
@@ -56,10 +41,6 @@ namespace TekhnelogosApi.Controllers
         public async Task<ActionResult<Personel>> GetByNameAsync(string name)
         {
             var personel = await _personelService.GetByNameAsync(name);
-            if (personel == null)
-            {
-                return NotFound();
-            }
             return Ok(personel);
         }
 

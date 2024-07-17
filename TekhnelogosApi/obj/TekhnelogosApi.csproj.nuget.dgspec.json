@@ -34,8 +34,8 @@
               "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\Entities\\Entities.csproj": {
                 "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\Entities\\Entities.csproj"
               },
-              "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModel.csproj": {
-                "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModel.csproj"
+              "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModels.csproj": {
+                "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModels.csproj"
               }
             }
           }
@@ -199,8 +199,8 @@
               "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\Entities\\Entities.csproj": {
                 "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\Entities\\Entities.csproj"
               },
-              "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModel.csproj": {
-                "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModel.csproj"
+              "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModels.csproj": {
+                "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModels.csproj"
               }
             }
           }
@@ -377,8 +377,8 @@
               "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\DataAccess\\DataAccess.csproj": {
                 "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\DataAccess\\DataAccess.csproj"
               },
-              "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModel.csproj": {
-                "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModel.csproj"
+              "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModels.csproj": {
+                "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModels.csproj"
               }
             }
           }
@@ -459,12 +459,12 @@
         }
       }
     },
-    "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModel.csproj": {
+    "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModel.csproj",
-        "projectName": "ViewModel",
-        "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModel.csproj",
+        "projectUniqueName": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModels.csproj",
+        "projectName": "ViewModels",
+        "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModels.csproj",
         "packagesPath": "C:\\Users\\semih\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\obj\\",
         "projectStyle": "PackageReference",

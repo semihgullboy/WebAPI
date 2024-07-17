@@ -21,18 +21,30 @@ namespace Business.Concrete
 
         public async Task AddAsync(TitleViewModel entity)
         {
+            if (entity == null)
+            {
+                throw new ArgumentNullException(nameof(entity), "Eklenecek başlık bilgileri null olmamalıdır.");
+            }
+
             var title = _mapper.Map<Title>(entity);
             await _titleDal.AddAsync(title);
         }
 
         public async Task DeleteAsync(int titleID)
         {
+            if (titleID <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(titleID), "Başlık ID'si sıfırdan büyük olmalıdır.");
+            }
+
             var title = await _titleDal.GetAsync(t => t.TitleID == titleID);
 
-            if (title != null)
+            if (title == null)
             {
-                await _titleDal.DeleteAsync(title);
+                throw new Exception($"ID'si {titleID} olan başlık bulunamadı.");
             }
+
+            await _titleDal.DeleteAsync(title);
         }
 
         public async Task<List<TitleViewModel>> GetAllAsync()
@@ -43,17 +55,39 @@ namespace Business.Concrete
 
         public async Task<TitleViewModel> GetByIdAsync(int titleID)
         {
+            if (titleID <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(titleID), "Başlık ID'si sıfırdan büyük olmalıdır.");
+            }
+
             var title = await _titleDal.GetAsync(t => t.TitleID == titleID);
+
+            if (title == null)
+            {
+                throw new Exception($"ID'si {titleID} olan başlık bulunamadı.");
+            }
+
             return _mapper.Map<TitleViewModel>(title);
         }
 
-        public Task<TitleDetailsViewModel> GetTitleWithPersonelsAsync(int titleId)
+
+        public Task<TitleDetailsViewModel> GetTitleWithPersonelsAsync(int titleID)
         {
-            return _titleDal.GetTitleWithPersonelsAsync(titleId);
+            if (titleID <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(titleID), "Başlık ID'si sıfırdan büyük olmalıdır.");
+            }
+
+            return _titleDal.GetTitleWithPersonelsAsync(titleID);
         }
 
         public async Task UpdateAsync(TitleViewModel entity)
         {
+            if (entity == null)
+            {
+                throw new ArgumentNullException(nameof(entity), "Güncellenecek başlık bilgileri null olmamalıdır.");
+            }
+
             var title = _mapper.Map<Title>(entity);
             await _titleDal.UpdateAsync(title);
         }

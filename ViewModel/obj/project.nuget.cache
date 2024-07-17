@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4XoUDU7DnMxIf5wIVbZSUmfZM3J7tbEBcq6pf+Iu6GuBmiYtm0L7sK32zKK4706VsNRO7rMev2r2+ePEp/XWeg==",
+  "dgSpecHash": "WP3QD+3v2laLO4XqRFUp8zoRU2NFTwraIu/RaHdYbT/UiLGMCOYhwebceebdzn8wYGscIQ5O4L6X8iePgpQwKw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModel.csproj",
+  "projectFilePath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModels.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\semih\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
     "C:\\Users\\semih\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",

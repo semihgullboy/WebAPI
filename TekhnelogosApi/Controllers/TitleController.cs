@@ -28,28 +28,13 @@ namespace TekhnelogosApi.Controllers
         public async Task<ActionResult<Title>> GetByIdAsync(int id)
         {
             var title = await _titleService.GetByIdAsync(id);
-            if (title == null)
-            {
-                return NotFound();
-            }
             return Ok(title);
         }
 
         [HttpGet("GetTitleWithPersonelsAsync")]
         public async Task<IActionResult> GetTitleWithPersonelsAsync(int titleID)
         {
-            if (titleID <= 0)
-            {
-                return BadRequest("Invalid department ID.");
-            }
-
             var titleInformation = await _titleService.GetTitleWithPersonelsAsync(titleID);
-
-            if (titleInformation == null)
-            {
-                return NotFound("Department not found for the given personel ID.");
-            }
-
             return Ok(titleInformation);
         }
 
@@ -70,7 +55,6 @@ namespace TekhnelogosApi.Controllers
         [HttpPut("update")]
         public async Task<IActionResult> Update(TitleViewModel title)
         {
-
             await _titleService.UpdateAsync(title);
             return NoContent();
         }

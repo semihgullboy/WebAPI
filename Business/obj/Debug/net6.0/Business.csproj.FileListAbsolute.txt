@@ -36,5 +36,5 @@ C:\Users\semih\OneDrive\Masaüstü\WebApi\Business\obj\Debug\net6.0\Business.dll
 C:\Users\semih\OneDrive\Masaüstü\WebApi\Business\obj\Debug\net6.0\refint\Business.dll
 C:\Users\semih\OneDrive\Masaüstü\WebApi\Business\obj\Debug\net6.0\Business.pdb
 C:\Users\semih\OneDrive\Masaüstü\WebApi\Business\obj\Debug\net6.0\ref\Business.dll
-C:\Users\semih\OneDrive\Masaüstü\WebApi\Business\bin\Debug\net6.0\ViewModel.dll
-C:\Users\semih\OneDrive\Masaüstü\WebApi\Business\bin\Debug\net6.0\ViewModel.pdb
+C:\Users\semih\OneDrive\Masaüstü\WebApi\Business\bin\Debug\net6.0\ViewModels.dll
+C:\Users\semih\OneDrive\Masaüstü\WebApi\Business\bin\Debug\net6.0\ViewModels.pdb

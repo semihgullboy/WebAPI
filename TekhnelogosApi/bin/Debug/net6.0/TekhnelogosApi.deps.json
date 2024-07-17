@@ -15,7 +15,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.32",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.32",
           "Swashbuckle.AspNetCore": "6.5.0",
-          "ViewModel": "1.0.0"
+          "ViewModels": "1.0.0"
         },
         "runtime": {
           "TekhnelogosApi.dll": {}
@@ -558,7 +558,7 @@
           "DataAccess": "1.0.0",
           "Entities": "1.0.0",
           "FluentValidation.AspNetCore": "11.3.0",
-          "ViewModel": "1.0.0"
+          "ViewModels": "1.0.0"
         },
         "runtime": {
           "Business.dll": {}
@@ -579,7 +579,7 @@
           "FluentValidation.AspNetCore": "11.3.0",
           "Microsoft.EntityFrameworkCore": "6.0.32",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.32",
-          "ViewModel": "1.0.0"
+          "ViewModels": "1.0.0"
         },
         "runtime": {
           "DataAccess.dll": {}
@@ -594,12 +594,12 @@
           "Entities.dll": {}
         }
       },
-      "ViewModel/1.0.0": {
+      "ViewModels/1.0.0": {
         "dependencies": {
           "FluentValidation.AspNetCore": "11.3.0"
         },
         "runtime": {
-          "ViewModel.dll": {}
+          "ViewModels.dll": {}
         }
       }
     }
@@ -1008,7 +1008,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "ViewModel/1.0.0": {
+    "ViewModels/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

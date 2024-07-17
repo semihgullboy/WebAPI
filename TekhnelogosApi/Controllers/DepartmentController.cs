@@ -27,18 +27,7 @@ namespace TekhnelogosApi.Controllers
         [HttpGet("GetDepartmentPersonnelInformationAsync")]
         public async Task<IActionResult> GetDepartmentPersonnelInformationAsync(int departmentID)
         {
-            if (departmentID <= 0)
-            {
-                return BadRequest("Invalid department ID.");
-            }
-
             var departmentPersonelInformation = await _departmentService.GetDepartmentPersonnelInformationAsync(departmentID);
-
-            if (departmentPersonelInformation == null)
-            {
-                return NotFound("Department not found for the given personel ID.");
-            }
-
             return Ok(departmentPersonelInformation);
         }
 
@@ -46,10 +35,6 @@ namespace TekhnelogosApi.Controllers
         public async Task<ActionResult<Department>> GetByIdAsync(int id)
         {
             var departments = await _departmentService.GetByIdAsync(id);
-            if (departments == null)
-            {
-                return NotFound();
-            }
             return Ok(departments);
         }
 
