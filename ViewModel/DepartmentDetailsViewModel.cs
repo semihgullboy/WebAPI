@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ViewModel
 {
-    public class DepartmentViewModel
+    public class DepartmentDetailsViewModel
     {
         public int DepartmentID { get; set; }
         public string DepartmentName { get; set; }

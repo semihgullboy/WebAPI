@@ -24,35 +24,42 @@ namespace Business.Concrete
             _mapper = mapper;
         }
 
-        public Task AddAsync(DepartmentViewModel entity)
+        public async Task AddAsync(DepartmentViewModel entity)
         {
             var department = _mapper.Map<Department>(entity);
-            return _departmentDal.AddAsync(department);
+            await _departmentDal.AddAsync(department);
         }
 
-        public Task DeleteAsync(Department entity)
+        public async Task DeleteAsync(int departmentID)
         {
-            return _departmentDal.DeleteAsync(entity);
+            var deparment = await _departmentDal.GetAsync(d => d.DepartmentID == departmentID);
+            if (deparment != null)
+            {
+                await _departmentDal.DeleteAsync(deparment);
+            }
         }
 
-        public Task<List<Department>> GetAllAsync()
+        public async Task<List<DepartmentViewModel>> GetAllAsync()
         {
-            return _departmentDal.GetAllAsync();
+            var departments = await _departmentDal.GetAllAsync();
+            return _mapper.Map<List<DepartmentViewModel>>(departments);
         }
 
-        public Task<Department> GetByIdAsync(int departmentID)
+        public async Task<DepartmentViewModel> GetByIdAsync(int departmentID)
         {
-            return _departmentDal.GetAsync(d => d.DepartmentID == departmentID);
+            var departments = await _departmentDal.GetAsync(d => d.DepartmentID == departmentID);
+            return _mapper.Map<DepartmentViewModel>(departments);
         }
 
-        public Task<DepartmentViewModel> GetDepartmentPersonnelInformationAsync(int departmentID)
+        public Task<DepartmentDetailsViewModel> GetDepartmentPersonnelInformationAsync(int departmentID)
         {
             return _departmentDal.GetDepartmentPersonnelInformationAsync(departmentID);
         }
 
-        public Task UpdateAsync(Department entity)
+        public Task UpdateAsync(DepartmentViewModel entity)
         {
-            return _departmentDal.UpdateAsync(entity);
+            var departments = _mapper.Map<Department>(entity);
+            return _departmentDal.UpdateAsync(departments);
         }
     }
 }

@@ -61,14 +61,14 @@ namespace TekhnelogosApi.Controllers
         }
 
         [HttpDelete("delete")]
-        public async Task<ActionResult> Delete(Department department)
+        public async Task<ActionResult> Delete(int departmentID)
         {
-            await _departmentService.DeleteAsync(department);
+            await _departmentService.DeleteAsync(departmentID);
             return NoContent();
         }
 
         [HttpPut("update")]
-        public async Task<IActionResult> Update(Department department)
+        public async Task<IActionResult> Update(DepartmentViewModel department)
         {
 
             await _departmentService.UpdateAsync(department);

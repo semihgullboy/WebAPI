@@ -5,6 +5,6 @@ namespace DataAccess.Abstract
 {
     public interface IDepartmentDal : IEntityRepository<Department>
     {
-        Task<DepartmentViewModel> GetDepartmentPersonnelInformationAsync(int departmentID);
+        Task<DepartmentDetailsViewModel> GetDepartmentPersonnelInformationAsync(int departmentID);
     }
 }

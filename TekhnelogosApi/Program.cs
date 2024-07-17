@@ -5,6 +5,7 @@ using Business.Validators;
 using DataAccess.Abstract;
 using DataAccess.Concrete;
 using DataAccess.Concrete.EntityFramework;
+using Entities.Concrete;
 using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
@@ -13,7 +14,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers()
-        .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<PersonelViewModelValidator>());
+        .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<PersonelViewModelValidator>())
+        .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<DepartmentViewModelValidator>());
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -36,6 +38,10 @@ builder.Services.AddScoped<IPersonelDal, EFPersonelDal>();
 builder.Services.AddScoped<IPersonelService, PersonelManager>();
 builder.Services.AddScoped<IDepartmentDal, EfDepartmentDal>();
 builder.Services.AddScoped<IDepartmentService, DepartmentManager>();
+builder.Services.AddScoped<ITitleDal, EfTitleDal>();
+builder.Services.AddScoped<IEntityRepository<Title>, EfTitleDal>(); 
+builder.Services.AddScoped<ITitleService, TitleManager>();
+
 
 var app = builder.Build();
 

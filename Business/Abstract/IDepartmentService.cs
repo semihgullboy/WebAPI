@@ -11,11 +11,11 @@ namespace Business.Abstract
 {
     public interface IDepartmentService
     {
-        Task<Department> GetByIdAsync(int departmentID);
-        Task<List<Department>> GetAllAsync();
-        Task AddAsync(DepartmentDetailsViewModel entity);
-        Task DeleteAsync(Department entity);
-        Task UpdateAsync(Department entity);
+        Task<DepartmentViewModel> GetByIdAsync(int departmentID);
+        Task<List<DepartmentViewModel>> GetAllAsync();
+        Task AddAsync(DepartmentViewModel entity);
+        Task DeleteAsync(int departmentID);
+        Task UpdateAsync(DepartmentViewModel entity);
         Task<DepartmentDetailsViewModel> GetDepartmentPersonnelInformationAsync(int departmentID);
     }
 }

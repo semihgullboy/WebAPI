@@ -14,15 +14,15 @@ namespace DataAccess.Concrete.EntityFramework
             _context = context;
         }
 
-        public async Task<DepartmentViewModel> GetDepartmentPersonnelInformationAsync(int departmentID)
+        public async Task<DepartmentDetailsViewModel> GetDepartmentPersonnelInformationAsync(int departmentID)
         {
             var department = await _context.Departments
                 .Where(d => d.DepartmentID == departmentID)
-                .Select(d => new DepartmentViewModel
+                .Select(d => new DepartmentDetailsViewModel
                 {
                     DepartmentID = d.DepartmentID,
                     DepartmentName = d.DepartmentName,
-                    Personnel = d.Personels.Select(p => new PersonelDetailsViewModel
+                    Personel = d.Personels.Select(p => new PersonelDetailsViewModel
                     {
                         PersonelID = p.PersonelID,
                         FirstName = p.FirstName,
