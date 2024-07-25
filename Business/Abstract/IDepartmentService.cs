@@ -1,21 +1,15 @@
-﻿using Entities.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Core.Utilities.Results;
 using ViewModel;
 
 namespace Business.Abstract
 {
     public interface IDepartmentService
     {
-        Task<DepartmentViewModel> GetByIdAsync(int departmentID);
-        Task<List<DepartmentViewModel>> GetAllAsync();
-        Task AddAsync(DepartmentViewModel entity);
-        Task DeleteAsync(int departmentID);
-        Task UpdateAsync(DepartmentViewModel entity);
-        Task<DepartmentDetailsViewModel> GetDepartmentPersonnelInformationAsync(int departmentID);
+        Task<IDataResult<DepartmentViewModel>> GetByIdAsync(int departmentID);
+        Task<IDataResult<List<DepartmentViewModel>>> GetAllAsync();
+        Task<IResult> AddAsync(DepartmentViewModel entity);
+        Task<IResult> DeleteAsync(int departmentID);
+        Task<IResult> UpdateAsync(DepartmentViewModel entity);
+        Task<IDataResult<DepartmentDetailsViewModel>> GetDepartmentPersonnelInformationAsync(int departmentID);
     }
 }

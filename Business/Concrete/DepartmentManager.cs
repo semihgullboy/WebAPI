@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using Business.Abstract;
+using Business.Constants;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
@@ -24,76 +26,81 @@ namespace Business.Concrete
             _mapper = mapper;
         }
 
-        public async Task AddAsync(DepartmentViewModel entity)
+        public async Task<IResult> AddAsync(DepartmentViewModel entity)
         {
-            if (entity == null)
-            {
-                throw new ArgumentNullException(nameof(entity), "Eklenecek departman bilgileri geçerli bir referans olmalıdır.");
-            }
-
             var department = _mapper.Map<Department>(entity);
             await _departmentDal.AddAsync(department);
+
+            return new SuccessResult(Messages.DepartmentAdded);
         }
 
-        public async Task DeleteAsync(int departmentID)
+        public async Task<IResult> DeleteAsync(int departmentID)
         {
             if (departmentID <= 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(departmentID), "Departman ID'si sıfırdan büyük olmalıdır.");
+                return new ErrorResult(Messages.DepartmentIdInvalid);
             }
 
             var department = await _departmentDal.GetAsync(d => d.DepartmentID == departmentID);
 
             if (department == null)
             {
-                throw new Exception($"ID'si {departmentID} olan departman bulunamadı.");
+                return new ErrorResult(Messages.DepartmentIdNotFound);
             }
 
             await _departmentDal.DeleteAsync(department);
+            return new SuccessResult(Messages.DepartmentDeleted);
         }
 
-        public async Task<List<DepartmentViewModel>> GetAllAsync()
+        public async Task<IDataResult<List<DepartmentViewModel>>> GetAllAsync()
         {
             var departments = await _departmentDal.GetAllAsync();
-            return _mapper.Map<List<DepartmentViewModel>>(departments);
+            var departmentViewModels = _mapper.Map<List<DepartmentViewModel>>(departments);
+            return new SuccessDataResult<List<DepartmentViewModel>>(departmentViewModels,Messages.DepartmentsListed);
         }
 
-        public async Task<DepartmentViewModel> GetByIdAsync(int departmentID)
+        public async Task<IDataResult<DepartmentViewModel>> GetByIdAsync(int departmentID)
         {
             if (departmentID <= 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(departmentID), "Departman ID'si sıfırdan büyük olmalıdır.");
+                return new ErrorDataResult<DepartmentViewModel>(Messages.DepartmentIdInvalid);
             }
 
             var department = await _departmentDal.GetAsync(d => d.DepartmentID == departmentID);
 
             if (department == null)
             {
-                throw new Exception($"ID'si {departmentID} olan departman bulunamadı.");
+                return new ErrorDataResult<DepartmentViewModel>(Messages.DepartmentIdNotFound);
             }
 
-            return _mapper.Map<DepartmentViewModel>(department);
+            var departmentViewModel = _mapper.Map<DepartmentViewModel>(department);
+            return new SuccessDataResult<DepartmentViewModel>(departmentViewModel, Messages.DepartmentListed);
         }
 
-        public Task<DepartmentDetailsViewModel> GetDepartmentPersonnelInformationAsync(int departmentID)
+        public async Task<IDataResult<DepartmentDetailsViewModel>> GetDepartmentPersonnelInformationAsync(int departmentID)
         {
             if (departmentID <= 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(departmentID), "Departman ID'si sıfırdan büyük olmalıdır.");
+                return new ErrorDataResult<DepartmentDetailsViewModel>(Messages.DepartmentIdInvalid);
             }
 
-            return _departmentDal.GetDepartmentPersonnelInformationAsync(departmentID);
+            var department = await _departmentDal.GetDepartmentPersonnelInformationAsync(departmentID);
+
+            if (department == null)
+            {
+                return new ErrorDataResult<DepartmentDetailsViewModel>(Messages.DepartmentIdNotFound);
+            }
+
+            var departmentViewModel = _mapper.Map<DepartmentDetailsViewModel>(department);
+            return new SuccessDataResult<DepartmentDetailsViewModel>(departmentViewModel, Messages.DepartmentPersonnelListedSuccessfully);
         }
 
-        public async Task UpdateAsync(DepartmentViewModel entity)
+        public async Task<IResult> UpdateAsync(DepartmentViewModel entity)
         {
-            if (entity == null)
-            {
-                throw new ArgumentNullException(nameof(entity), "Güncellenecek departman bilgileri geçerli bir referans olmalıdır.");
-            }
-
             var department = _mapper.Map<Department>(entity);
             await _departmentDal.UpdateAsync(department);
+
+            return new SuccessResult(Messages.DepartmentUpdated);
         }
     }
 }

@@ -20,8 +20,7 @@ namespace TekhnelogosApi.Controllers
         [HttpGet("GetAll")]
         public async Task<ActionResult<List<Department>>> GetAll()
         {
-            var departments = await _departmentService.GetAllAsync();
-            return Ok(departments);
+            return Ok(await _departmentService.GetAllAsync());
         }
 
         [HttpGet("GetDepartmentPersonnelInformationAsync")]
@@ -39,25 +38,21 @@ namespace TekhnelogosApi.Controllers
         }
 
         [HttpPost("add")]
-        public async Task<IActionResult> Add(DepartmentViewModel department)
+        public async Task<IActionResult> Add([FromBody] DepartmentViewModel department)
         {
-            await _departmentService.AddAsync(department);
-            return Ok();
+            return Ok(await _departmentService.AddAsync(department));
         }
 
         [HttpDelete("delete")]
         public async Task<ActionResult> Delete(int departmentID)
         {
-            await _departmentService.DeleteAsync(departmentID);
-            return NoContent();
+            return Ok(await _departmentService.DeleteAsync(departmentID));
         }
 
         [HttpPut("update")]
         public async Task<IActionResult> Update(DepartmentViewModel department)
         {
-
-            await _departmentService.UpdateAsync(department);
-            return NoContent();
+            return Ok(await _departmentService.UpdateAsync(department));
         }
 
         

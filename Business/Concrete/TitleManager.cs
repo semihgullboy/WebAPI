@@ -1,7 +1,5 @@
 ﻿using AutoMapper;
 using Business.Abstract;
-using AutoMapper;
-using Business.Abstract;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using ViewModel;
