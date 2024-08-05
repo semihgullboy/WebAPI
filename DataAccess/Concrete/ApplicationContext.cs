@@ -12,5 +12,7 @@ namespace DataAccess.Concrete
         public DbSet<Personel> Personels { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Title> Titles { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
     }
 }

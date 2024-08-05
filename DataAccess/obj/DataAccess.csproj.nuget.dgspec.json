@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\DataAccess\\DataAccess.csproj": {}
+    "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\Core\\Core.csproj": {
+    "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\semih\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\Core\\obj\\",
+        "outputPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\semih\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -47,6 +47,10 @@
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.32, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [
@@ -83,14 +87,14 @@
         }
       }
     },
-    "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\semih\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\semih\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -107,11 +111,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\Entities\\Entities.csproj"
+              "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\Entities\\Entities.csproj"
               },
-              "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModels.csproj": {
-                "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModels.csproj"
+              "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\ViewModel\\ViewModels.csproj": {
+                "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\ViewModel\\ViewModels.csproj"
               }
             }
           }
@@ -179,14 +183,14 @@
         }
       }
     },
-    "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\Entities\\Entities.csproj": {
+    "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\semih\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\semih\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -203,8 +207,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\Core\\Core.csproj"
+              "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\Core\\Core.csproj"
               }
             }
           }
@@ -258,14 +262,14 @@
         }
       }
     },
-    "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModels.csproj": {
+    "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\ViewModel\\ViewModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModels.csproj",
+        "projectUniqueName": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\ViewModel\\ViewModels.csproj",
         "projectName": "ViewModels",
-        "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModels.csproj",
+        "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\ViewModel\\ViewModels.csproj",
         "packagesPath": "C:\\Users\\semih\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\obj\\",
+        "outputPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\ViewModel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\semih\\AppData\\Roaming\\NuGet\\NuGet.Config",

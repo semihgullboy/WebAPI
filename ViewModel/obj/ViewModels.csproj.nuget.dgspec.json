@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModels.csproj": {}
+    "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\ViewModel\\ViewModels.csproj": {}
   },
   "projects": {
-    "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModels.csproj": {
+    "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\ViewModel\\ViewModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModels.csproj",
+        "projectUniqueName": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\ViewModel\\ViewModels.csproj",
         "projectName": "ViewModels",
-        "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\ViewModels.csproj",
+        "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\ViewModel\\ViewModels.csproj",
         "packagesPath": "C:\\Users\\semih\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\ViewModel\\obj\\",
+        "outputPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\ViewModel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\semih\\AppData\\Roaming\\NuGet\\NuGet.Config",

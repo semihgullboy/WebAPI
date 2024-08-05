@@ -1,61 +1,98 @@
-﻿using Business.Abstract;
-using Entities.Concrete;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using ViewModel;
+﻿using Business.Constants;
+using Core.Utilities.Results;
+using Microsoft.Extensions.Configuration;
+using System.DirectoryServices;
+using System.Reflection.PortableExecutable;
+using System.Runtime.InteropServices;
+using TekhnelogosOkr.Business.Abstract;
+using TekhnelogosOkr.Business.Constants;
+using TekhnelogosOkr.Core.Utilities.Results;
+using TekhnelogosOkr.ViewModel.Authentication;
+using ViewModels;
 
-namespace TekhnelogosApi.Controllers
+namespace TekhnelogosOkr.Business.Concrete
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class DepartmentController : ControllerBase
-    { 
-        private readonly IDepartmentService _departmentService;
+    public class LdapAuthenticationManager : IAuthenticationService
+    {
+        private readonly string ldapPath;
+        private readonly string ldapUser;
+        private readonly string ldapPassword;
 
-        public DepartmentController(IDepartmentService departmentService)
+        public LdapAuthenticationManager(IConfiguration configuration)
         {
-            _departmentService = departmentService;
+            ldapPath = configuration.GetSection("LdapSettings:Path").Value;
+            ldapUser = configuration.GetSection("LdapSettings:Username").Value;
+            ldapPassword = configuration.GetSection("LdapSettings:Password").Value;
         }
 
-        [HttpGet("GetAll")]
-        public async Task<ActionResult<List<Department>>> GetAll()
+        public async Task<IResult> Login(UserLoginViewModel user)
         {
-            return Ok(await _departmentService.GetAllAsync());
+            try
+            {
+                using (var ldapConnection = new DirectoryEntry($"LDAP://{ldapPath}", ldapUser, ldapPassword))
+                {
+                    ldapConnection.RefreshCache();
+                    ldapConnection.AuthenticationType = AuthenticationTypes.Secure;
+
+                    using (var searcher = new DirectorySearcher(ldapConnection))
+                    {
+                        searcher.Filter = $"(&(objectClass=user)(mail={user.Email}))";
+                        searcher.PropertiesToLoad.Add("distinguishedName");
+
+                        SearchResult searchResult = searcher.FindOne();
+
+                        if (searchResult != null)
+                        {
+                            var distinguishedName = searchResult.Properties["distinguishedName"].OfType<string>().FirstOrDefault();
+                            if (distinguishedName != null)
+                            {
+                                return await AuthenticateUser(distinguishedName, user.Password);
+                            }
+                            else
+                            {
+                                return new ErrorResult(Messages.UserNotFound);
+                            }
+                        }
+                        else
+                        {
+                            return new ErrorResult(Messages.UserNotFound);
+                        }
+                    }
+                }
+            }
+            catch (COMException comEx)
+            {
+                return new ErrorResult($"{Messages.ComException} {comEx.Message} (Error Code: {comEx.ErrorCode})");
+            }
+            catch (Exception ex)
+            {
+                return new ErrorResult($"{Messages.GeneralException} {ex.Message}");
+            }
         }
 
-        [HttpGet("GetDepartmentPersonnelInformationAsync")]
-        public async Task<IActionResult> GetDepartmentPersonnelInformationAsync(int departmentID)
+        private async Task<IResult> AuthenticateUser(string distinguishedName, string password)
         {
-            var departmentPersonelInformation = await _departmentService.GetDepartmentPersonnelInformationAsync(departmentID);
-            return Ok(departmentPersonelInformation);
+            try
+            {
+                using (var userEntry = new DirectoryEntry($"LDAP://{distinguishedName}", null, password))
+                {
+                    userEntry.AuthenticationType = AuthenticationTypes.Secure;
+
+                    object nativeObject = userEntry.NativeObject;
+                    if (nativeObject != null)
+                    {
+                        return new SuccessResult(Messages.UserAuthenticated);
+                    }
+                    else
+                    {
+                        return new ErrorResult(Messages.UserAuthenticationFailed);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return new ErrorResult($"{Messages.GeneralException} {ex.Message}");
+            }
         }
-
-        [HttpGet("ById/{id}")]
-        public async Task<ActionResult<Department>> GetByIdAsync(int id)
-        {
-            var departments = await _departmentService.GetByIdAsync(id);
-            return Ok(departments);
-        }
-
-        [HttpPost("add")]
-        public async Task<IActionResult> Add([FromBody] DepartmentViewModel department)
-        {
-            return Ok(await _departmentService.AddAsync(department));
-        }
-
-        [HttpDelete("delete")]
-        public async Task<ActionResult> Delete(int departmentID)
-        {
-            return Ok(await _departmentService.DeleteAsync(departmentID));
-        }
-
-        [HttpPut("update")]
-        public async Task<IActionResult> Update(DepartmentViewModel department)
-        {
-            return Ok(await _departmentService.UpdateAsync(department));
-        }
-
-        
-
     }
 }

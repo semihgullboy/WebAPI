@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\Core\\Core.csproj": {}
+    "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\Core\\Core.csproj": {
+    "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\semih\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\Core\\obj\\",
+        "outputPath": "C:\\Users\\semih\\OneDrive\\Masaüstü\\WebApi\\WebApi\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\semih\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -47,6 +47,10 @@
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.32, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [
